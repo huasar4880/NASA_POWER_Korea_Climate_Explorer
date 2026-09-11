@@ -59,23 +59,26 @@ Sen/MK/BH-FDR, normal/anomaly, 계절·threshold proxy, Bias/MAE/RMSE·상관, G
 
 ## Quick Start
 
-Python 3.11 이상. 경량 GitHub 소스 또는 제공받은 프로젝트 폴더에서:
+공개 데모는 Python 3.13에서 별도 설치 검증했습니다. GitHub 소스 폴더에서:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m pytest tests/test_public_release.py -q
+python -m pip install -r public_app/requirements.txt
+python -m pip install pytest
+python -m pytest tests/test_public_demo.py -q
 streamlit run streamlit_app.py
 ```
 
-최종 통합과 UI는 API를 호출하지 않습니다. 포함된 최소 요약으로 Home의 핵심 결과를 읽을 수 있습니다. 나머지 분석 페이지·전체 테스트·보고서 재생성에는 별도 연구 cache가 필요합니다. cache 없는 페이지는 자료 부족을 안내하며 자동 다운로드하지 않습니다. 의존성 설치에는 인터넷이 필요할 수 있지만 demo 열람과 위 테스트에는 API 키가 필요 없습니다. [재현 가이드](docs/REPRODUCIBILITY.md).
+공개 UI는 API를 호출하지 않습니다. 환경변수 없이도 안전한 public mode로 시작하며 Home, Nationwide Trends, NASA × KMA Validation, Spatial Patterns, Period Sensitivity, Methods / Limitations, Research Report의 7개 view를 제공합니다. 검증된 요약 CSV, 대표 PNG 5개, 자체 포함형 HTML 보고서만 읽으며 `.env`와 `data/`는 필요 없습니다.
+
+기존 18-page 연구 UI는 전체 `requirements.txt`와 별도 연구 archive를 준비한 뒤 `APP_MODE=full streamlit run streamlit_app.py`로 실행합니다. 전체 테스트와 기존 `tests/test_public_release.py`는 연구용 의존성을 사용합니다. [재현 가이드](docs/REPRODUCIBILITY.md) · [공개 데모 배포 설정](docs/PUBLIC_DEMO_DEPLOYMENT.md).
 
 ## 결과물
 
 [Executive Summary](output/public_demo/EXECUTIVE_SUMMARY.md) · [Fact layer](output/public_demo/final_research_fact_layer.csv) · [증거표](output/public_demo/final_evidence_matrix.csv) · [사본 무결성](output/public_demo/public_demo_manifest.json).
 
-전체 최종 HTML/Markdown 보고서는 `output/final/report/`에 로컬 보존하며, 추가 공개 선택사항입니다. 연구 cache 없이 제공되는 demo는 연구 전체 재현을 대신하지 않습니다.
+기존 최종 보고서는 `output/final/report/`에 그대로 보존합니다. 공개용 [HTML 보고서 사본](output/public_demo/deployment/Final_Research_Report.html)은 데모에서 다운로드 후 브라우저로 열 수 있습니다. 추가 그림·보고서와 기존 요약의 무결성은 [배포 asset manifest](output/public_demo/deployment/manifest.json)로 확인합니다. 연구 cache 없이 제공되는 demo는 연구 전체 재현을 대신하지 않습니다.
 
 ## 해석의 한계
 
@@ -83,7 +86,7 @@ streamlit run streamlit_app.py
 
 ## 재현성과 공개 정책
 
-[문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. 코드의 MIT License, 공개용 Git identity 및 첫 로컬 commit이 승인되었습니다. GitHub 저장소 생성, remote, push, tag, Release는 이번 로컬 작업에 포함하지 않습니다.
+[문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. [공개 저장소](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer)와 [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0)는 발행되어 있습니다. 이후 public demo 개선은 main에 추가하며 기존 v1.1.0 tag를 이동하지 않습니다. 실제 데모 배포 URL이 확인되기 전에는 Live Demo 링크나 배포 완료 문구를 게시하지 않습니다.
 
 ## 포트폴리오
 

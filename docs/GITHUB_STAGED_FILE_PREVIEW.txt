@@ -1,14 +1,15 @@
 # Selective staging preview — COMMIT candidates only
 # Includes this preview; size solved to a fixed point. No private file values.
-file_count: 235
-total_bytes: 2339808
+file_count: 248
+total_bytes: 3759147
 category	bytes	path
 COMMIT	115	.env.example
-COMMIT	852	.gitignore
+COMMIT	1150	.gitignore
+COMMIT	84	.streamlit/config.toml
 COMMIT	1108	AGENTS.md
 COMMIT	5301	CHANGELOG.md
 COMMIT	1067	LICENSE
-COMMIT	7334	README.md
+COMMIT	8135	README.md
 COMMIT	6	VERSION
 COMMIT	5032	config/kma_stations.json
 COMMIT	739	config/locations.json
@@ -54,9 +55,9 @@ COMMIT	3912	docs/FINAL_METHODS_SUMMARY.md
 COMMIT	8887	docs/FINAL_PORTFOLIO.md
 COMMIT	17707	docs/FINAL_RESULTS_SUMMARY.md
 COMMIT	3264	docs/GITHUB_DATA_POLICY.md
-COMMIT	2888	docs/GITHUB_PUBLICATION_PLAN.md
-COMMIT	10065	docs/GITHUB_STAGED_FILE_PREVIEW.txt
-COMMIT	2173	docs/INDEX.md
+COMMIT	3327	docs/GITHUB_PUBLICATION_PLAN.md
+COMMIT	10661	docs/GITHUB_STAGED_FILE_PREVIEW.txt
+COMMIT	2274	docs/INDEX.md
 COMMIT	8459	docs/INTERVIEW_NOTES.md
 COMMIT	5622	docs/METHODOLOGY.md
 COMMIT	9689	docs/NATIONWIDE_ASOS_SCREENING.md
@@ -67,8 +68,9 @@ COMMIT	1692	docs/PORTFOLIO_SUMMARY.md
 COMMIT	1867	docs/PROJECT_PITCH_60SEC.md
 COMMIT	3393	docs/PROJECT_STORY_3MIN.md
 COMMIT	53785	docs/PROJECT_TECHNICAL_REFERENCE.md
+COMMIT	4233	docs/PUBLIC_DEMO_DEPLOYMENT.md
 COMMIT	2829	docs/RELEASE_CHECKLIST.md
-COMMIT	3968	docs/REPRODUCIBILITY.md
+COMMIT	4543	docs/REPRODUCIBILITY.md
 COMMIT	5418	docs/RESULTS_SUMMARY.md
 COMMIT	2145	docs/RESUME_BULLETS.md
 COMMIT	8579	docs/ROADMAP.md
@@ -87,9 +89,19 @@ COMMIT	58789	docs/assets/final/kma_tavg_median_slope_by_start_year.png
 COMMIT	41722	docs/assets/final/nasa_station_vs_grid_moran.png
 COMMIT	47775	main.py
 COMMIT	3963	output/public_demo/EXECUTIVE_SUMMARY.md
+COMMIT	1159797	output/public_demo/deployment/Final_Research_Report.html
+COMMIT	115789	output/public_demo/deployment/common_period_bias_rmse.png
+COMMIT	116571	output/public_demo/deployment/common_period_tmax_tmin_trends.png
+COMMIT	1952	output/public_demo/deployment/manifest.json
 COMMIT	7014	output/public_demo/final_evidence_matrix.csv
 COMMIT	269106	output/public_demo/final_research_fact_layer.csv
 COMMIT	1116	output/public_demo/public_demo_manifest.json
+COMMIT	85	public_app/__init__.py
+COMMIT	7975	public_app/app.py
+COMMIT	3746	public_app/data.py
+COMMIT	315	public_app/mode.py
+COMMIT	110	public_app/requirements.txt
+COMMIT	229	public_app/streamlit_app.py
 COMMIT	83	reporting/__init__.py
 COMMIT	11370	reporting/charts.py
 COMMIT	15548	reporting/data_provider.py
@@ -108,7 +120,7 @@ COMMIT	266	requirements.txt
 COMMIT	57	scripts/__init__.py
 COMMIT	932	scripts/build_final_integration.py
 COMMIT	7428	scripts/check_release_safety.py
-COMMIT	14877	scripts/prepare_public_release.py
+COMMIT	15169	scripts/prepare_public_release.py
 COMMIT	938	scripts/review_spatial_numerics.py
 COMMIT	3875	scripts/verify_common_period.py
 COMMIT	4164	scripts/verify_common_period_spatial.py
@@ -209,7 +221,7 @@ COMMIT	6294	src/tier_b/workflow.py
 COMMIT	13379	src/validation.py
 COMMIT	7191	src/validation_visualization.py
 COMMIT	28190	src/visualization.py
-COMMIT	4588	streamlit_app.py
+COMMIT	4713	streamlit_app.py
 COMMIT	3084	tests/test_analysis.py
 COMMIT	5723	tests/test_city_analysis.py
 COMMIT	5958	tests/test_climate_analysis.py
@@ -224,6 +236,7 @@ COMMIT	2420	tests/test_nasa_power.py
 COMMIT	13839	tests/test_nationwide_screening.py
 COMMIT	13900	tests/test_nationwide_tier_a_analysis.py
 COMMIT	23947	tests/test_period_sensitivity.py
+COMMIT	5226	tests/test_public_demo.py
 COMMIT	9287	tests/test_public_release.py
 COMMIT	1515	tests/test_release.py
 COMMIT	1701	tests/test_release_preparation.py

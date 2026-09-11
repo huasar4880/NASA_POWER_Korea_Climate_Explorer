@@ -4,6 +4,13 @@ from __future__ import annotations
 
 import streamlit as st
 
+from public_app.mode import app_mode
+
+if app_mode() == 'public':
+    from public_app.app import run
+    run()
+    st.stop()
+
 from dashboard.pages.city_explorer import render as render_city_explorer
 from dashboard.pages.extremes_anomalies import render as render_extremes_anomalies
 from dashboard.pages.methodology import render as render_methodology

@@ -5,15 +5,17 @@
 `src/`, `dashboard/`, `reporting/`(템플릿 포함), `scripts/`, `tests/`, 작은 `config/`,
 `requirements.txt`, `main.py`, `streamlit_app.py`, `VERSION`, `AGENTS.md`, `README.md`,
 `CHANGELOG.md`, `LICENSE`, `.gitignore`, 빈 키의 `.env.example`, Markdown 문서.
-대표 그림은 `docs/assets/final/`의 기존 그림 3개만 사용합니다.
-`output/public_demo/`에는 Executive Summary, facts/evidence CSV 및 사본 해시 manifest만 포함합니다.
+`public_app/`, 전용 requirements와 `.streamlit/config.toml`도 포함합니다.
+대표 그림은 `docs/assets/final/`의 기존 그림 3개 및 `output/public_demo/deployment/`의 명시된 PNG 2개입니다.
+`output/public_demo/`의 기존 Executive Summary, facts/evidence CSV와 manifest는 그대로 유지합니다.
+22단계에서 `deployment/` 아래 기존 HTML 보고서 사본 및 추가 사본 manifest를 함께 공개합니다.
 정확한 경로·파일 수·논리 크기는 [선택 staging 미리보기](GITHUB_STAGED_FILE_PREVIEW.txt)에 있습니다.
 목록은 `scripts/prepare_public_release.py`의 명시적 allowlist와 비교합니다.
 
 ## OPTIONAL
 
-전체 최종 HTML/Markdown 연구보고서, 추가 요약 CSV, 기존 portfolio 그림과 report/assets.
-로컬에 보존하며 첫 공개 commit에는 넣지 않습니다. 별도 승인 후 크기·인용·secret 검사를 다시 거쳐 배포합니다.
+선택 사본 외 추가 요약 CSV, Markdown 연구보고서, 기존 portfolio 그림과 report/assets.
+로컬에 보존하며 명시된 공개 사본 외에는 넣지 않습니다. 추가 공개 시 크기·인용·secret 검사를 다시 거칩니다.
 
 ## DO_NOT_COMMIT
 
@@ -30,7 +32,8 @@ common-period / period-subset cache를 포함한 `data/` 전체, 해안선 원�
 이름·이메일을 출력하거나 임의로 설정하지 않습니다. Git commit 자체에는 Git 작성자 metadata가
 들어가므로 공개 전 본인 계정의 공개 적합성은 별도 확인해야 합니다.
 
-GitHub 저장소 생성·remote 연결·push·tag는 이번 승인 범위가 아닙니다.
+위 첫 commit 정책은 당시 승인 범위의 기록입니다. 현재 GitHub 공개와 v1.1.0 Release는 완료됐습니다.
+22단계에서는 공개 데모 개선 commit을 main에 추가할 수 있으나 기존 tag 이동·force push·자동 patch release는 금지합니다.
 **Code License: [MIT](../LICENSE).** 공개용 이름과 GitHub noreply 주소는 사용자 승인 정보이며, 이 저장소의 local Git 설정에만 사용합니다. 다른 개인 이메일·API 키·개인 절대경로는 허용하지 않습니다.
 기술 준비 완료와 실제 공개 승인은 별개입니다. [Release Checklist](RELEASE_CHECKLIST.md).
 

@@ -32,6 +32,12 @@ venv/
 !/output/public_demo/final_research_fact_layer.csv
 !/output/public_demo/final_evidence_matrix.csv
 !/output/public_demo/public_demo_manifest.json
+!/output/public_demo/deployment/
+/output/public_demo/deployment/*
+!/output/public_demo/deployment/manifest.json
+!/output/public_demo/deployment/common_period_tmax_tmin_trends.png
+!/output/public_demo/deployment/common_period_bias_rmse.png
+!/output/public_demo/deployment/Final_Research_Report.html
 /output/final/qa/
 /logs/
 logs/

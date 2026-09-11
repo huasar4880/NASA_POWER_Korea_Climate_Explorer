@@ -25,8 +25,9 @@ FIGURES = (
     'nasa_station_vs_grid_moran.png',
 )
 ROOT_FILES = {'.gitignore', '.env.example', 'VERSION', 'LICENSE', 'README.md', 'CHANGELOG.md',
-              'AGENTS.md', 'requirements.txt', 'main.py', 'streamlit_app.py'}
-SOURCE_DIRS = {'src', 'dashboard', 'reporting', 'scripts', 'tests', 'config'}
+              'AGENTS.md', 'requirements.txt', 'main.py', 'streamlit_app.py',
+              '.streamlit/config.toml', 'public_app/requirements.txt'}
+SOURCE_DIRS = {'src', 'dashboard', 'reporting', 'scripts', 'tests', 'config', 'public_app'}
 DEMO_FILES = {'EXECUTIVE_SUMMARY.md', 'final_research_fact_layer.csv',
               'final_evidence_matrix.csv', 'public_demo_manifest.json'}
 SKIP = {'.git', '.venv', 'venv', '__pycache__', '.pytest_cache', '.mypy_cache',
@@ -61,6 +62,9 @@ def classify(name: str) -> str:
     if name in {f'docs/assets/final/{f}' for f in FIGURES}:
         return 'COMMIT'
     if name in {f'{DEMO}/{f}' for f in DEMO_FILES}:
+        return 'COMMIT'
+    if name in {f'{DEMO}/deployment/{f}' for f in ('manifest.json',
+                'common_period_tmax_tmin_trends.png','common_period_bias_rmse.png','Final_Research_Report.html')}:
         return 'COMMIT'
     if name.startswith('output/final/') and not name.startswith(('output/final/qa/', f'{RELEASE}/')):
         return 'OPTIONAL'

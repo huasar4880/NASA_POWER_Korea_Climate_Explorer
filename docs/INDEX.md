@@ -3,8 +3,8 @@
 현재 공개 소프트웨어 버전: v1.1.0. v1.0.0은 초기 stable 8개 도시 버전이며, 과거 단계 기록의 버전 표기는 보존합니다.
 경량 공개본은 [Executive Summary](../output/public_demo/EXECUTIVE_SUMMARY.md),
 [Fact layer](../output/public_demo/final_research_fact_layer.csv),
-[증거표](../output/public_demo/final_evidence_matrix.csv) 및 대표 그림 3개를 제공합니다.
-전체 HTML 보고서와 연구 cache는 로컬 아카이브/선택 공개 대상입니다.
+[증거표](../output/public_demo/final_evidence_matrix.csv), 대표 PNG 5개 및 자체 포함형 HTML 보고서 사본을 제공합니다.
+연구 cache는 공개하지 않습니다. [7-view 공개 데모 설정](PUBLIC_DEMO_DEPLOYMENT.md).
 
 ## Overview
 
@@ -69,6 +69,8 @@
 - [PROJECT_PITCH_60SEC](PROJECT_PITCH_60SEC.md)
 
 ## Release
+
+- [PUBLIC_DEMO_DEPLOYMENT](PUBLIC_DEMO_DEPLOYMENT.md)
 
 - [REPRODUCIBILITY](REPRODUCIBILITY.md)
 

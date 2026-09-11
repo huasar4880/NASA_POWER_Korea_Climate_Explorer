@@ -2,8 +2,8 @@
 
 ## 공통 설치
 
-Python 3.11 이상. 저장소 URL은 사용자가 결정하므로 가상의 clone URL을 제시하지 않습니다.
-제공받은 소스 폴더에서:
+전체 연구 환경은 Python 3.11 이상입니다. 공개 데모 전용 설치는 아래 B를 따릅니다.
+공개 저장소 또는 제공받은 소스 폴더에서 전체 연구용으로 설치할 경우:
 
 ```bash
 python -m venv .venv
@@ -16,17 +16,21 @@ python -m pip check
 
 ## B. 경량 GitHub demo — 원본 cache와 키 불필요
 
-포함 자료: 검증된 facts/evidence CSV, Executive Summary, 무결성 manifest, 대표 그림 3개.
-다음은 API나 대용량 연구 archive 없이 실행할 수 있는 공개 파일·fixture 테스트입니다.
+포함 자료: 검증된 facts/evidence CSV, Executive Summary, 무결성 manifest, 대표 PNG 5개,
+자체 포함형 HTML 보고서 및 방법/한계 문서. Python 3.13의 새 가상환경에서 검증합니다.
+공개 runtime은 Streamlit와 pandas만 직접 의존하며 연구용 공간분석 패키지를 import하지 않습니다.
 
 ```bash
-python -m pytest tests/test_public_release.py -q
+python -m pip install -r public_app/requirements.txt
+python -m pip install pytest
+python -m pytest tests/test_public_demo.py -q
 streamlit run streamlit_app.py
 ```
 
-Home은 저장된 최소 요약을 읽습니다. 다른 연구 페이지의 상세 표·전체 보고서·Reports 다운로드는
-원래 cache가 없으면 이용할 수 없습니다. 없는 자료는 부족 안내로 표시하며 자동 API 수집하지 않습니다.
-README·포트폴리오·Executive Summary는 정적으로 열람 가능합니다.
+기본 public mode는 7개 핵심 view만 노출합니다. 보고서와 대표 그림도 공개 사본에서 읽습니다.
+전체 지점 지도·상세 연구 표 등은 full environment 전용이라고 안내하며 자동 API 수집하지 않습니다.
+공개 bundle이 없거나 손상돼도 private cache로 우회하지 않고 자료 부족 안내를 표시합니다.
+Cloud 전용 entrypoint `public_app/streamlit_app.py`는 APP_MODE 값과 무관하게 public으로 실행됩니다.
 CSV의 source_file은 연구 archive 내 provenance 경로이며, 경량 저장소에 원자료가 포함됐다는 의미가 아닙니다.
 공개 demo는 전체 분석을 재현하거나 source CSV까지 다시 검증하는 기능이 아닙니다.
 
@@ -37,7 +41,7 @@ CSV의 source_file은 연구 archive 내 provenance 경로이며, 경량 저장�
 ```bash
 python -m pytest -q
 python -m pip check
-streamlit run streamlit_app.py
+APP_MODE=full streamlit run streamlit_app.py
 ```
 
 전체 suite에는 저장된 연구 결과를 읽는 회귀 테스트가 포함되므로 경량 clone만으로 전체 통과를 보장하지 않습니다.
@@ -66,6 +70,8 @@ audit는 공개 후보를 검사하며 결과는 로컬 release/qa에 기록합�
 protected는 이미 저장된 작업 전 snapshot과 SHA256·mtime을 비교합니다. baseline을 새로 만들어 결과를 맞추지 않습니다.
 mtime은 변경 탐지용이며 관측일이나 취득일이 아닙니다.
 릴리스 manifest는 Git commit 자체 해시를 기록하므로 순환참조를 피하기 위해 commit 밖 로컬에 보관합니다.
-실제 Git remote / push / tag는 후속 단계입니다. Code License: [MIT](../LICENSE). 데이터 제공기관의 이용조건은 별도로 적용됩니다.
+GitHub의 v1.1.0 Release와 tag는 발행되었으며, 후속 데모 변경으로 이동하지 않습니다.
+공개 전용 테스트 외 기존 `tests/test_public_release.py`는 전체 연구 의존성으로 실행합니다.
+Code License: [MIT](../LICENSE). 데이터 제공기관의 이용조건은 별도로 적용됩니다.
 
 [문서 색인](INDEX.md) · [공개 계획](GITHUB_PUBLICATION_PLAN.md) · [점검표](RELEASE_CHECKLIST.md)
