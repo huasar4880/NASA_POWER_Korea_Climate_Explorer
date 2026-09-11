@@ -1,0 +1,16 @@
+requests>=2.32,<3
+numpy>=1.26,<3
+pandas>=2.2,<4
+matplotlib>=3.9,<4
+scipy>=1.13,<2
+statsmodels>=0.14,<1
+pymannkendall>=1.4,<2
+pytest>=8,<10
+streamlit>=1.41,<2
+plotly>=5.24,<7
+jinja2>=3.1.6,<4
+shapely>=2.1,<3
+pyproj>=3.7,<4
+pyshp>=3,<4
+spreg>=1.9,<2
+libpysal>=4.14,<5

@@ -1,0 +1,90 @@
+# NASA POWER Korea Climate Explorer
+
+**v1.1.0 · Code License: [MIT License](LICENSE)**
+
+Data: KMA ASOS, NASA POWER, KHOA source data remain subject to the respective providers' terms and attribution requirements. 코드의 MIT License는 원자료의 이용조건을 변경하지 않습니다.
+
+## 한눈에 보기
+
+전국 장기 기온변화의 강건한 발견과 조건부 발견을 구분하는 NASA POWER × KMA ASOS 연구 플랫폼.
+
+공식 inventory 105 <!-- fact:inventory_n -->개, Tier A 45 <!-- fact:tier_a -->개, Tier B 6 <!-- fact:tier_b -->개, 공통기간 51 <!-- fact:common_n -->개 지점 및 NASA 고유 격자 34 <!-- fact:grid_n -->개. 장기 1981-01-01~2025-12-31 <!-- fact:long_period -->, 공통기간 1991-01-01–2025-12-31 <!-- fact:common_period -->, normal 1991–2020 <!-- fact:normal -->.
+
+19단계 기준 전체 pytest: 711/711 통과. 역사적 근거: `output/final/final_test_summary.csv`(로컬 연구 아카이브). 현재 릴리스 검증은 [공개 점검표](docs/RELEASE_CHECKLIST.md)를 따릅니다.
+
+v1.0.0은 초기 stable 8개 도시 분석입니다. v1.1.0은 전국 ASOS screening, Tier A/B·51개 공통기간, NASA grid sharing, 공간·해안·기간 민감성 및 최종 연구 포트폴리오까지 포함합니다. 과거 산출물의 1.0.0 표기는 생성 당시 버전이며 변경하지 않았습니다.
+
+## 핵심 결과
+
+- 고정 Tier A의 모든 시작기간에서 TAVG가 증가한 지점은 45 <!-- fact:stability_TAVG_positive_all_count -->개입니다. 공통기간에서는 51 <!-- fact:common_KMA_TAVG_positive -->/51 <!-- fact:common_n -->개 지점이 증가하고 모두 원 MK의 BH-FDR 기준을 충족했습니다.
+
+- 공통기간 TMIN–TMAX 기울기 차이의 중앙값은 0.1470 <!-- fact:contrast_median --> °C/decade이며, TMIN 상승이 더 큰 지점은 40 <!-- fact:contrast_positive -->개입니다. KMA DTR 기울기 중앙값은 -0.1776 <!-- fact:common_KMA_dtr --> °C/decade입니다.
+
+- 공통기간 TAVG의 NASA–KMA 추세 방향 일치는 51 <!-- fact:agreement_TAVG -->/51 <!-- fact:common_n -->개 지점입니다. 그러나 Bias 중앙값 -1.0155 <!-- fact:validation_TAVG_bias --> °C와 RMSE 중앙값 1.9028 <!-- fact:validation_TAVG_rmse --> °C는 절대 수준의 차이를 보여줍니다.
+
+- NASA TAVG의 공간구조는 station-linked에서 고유 격자로 바꿔도 양의 유의성이 유지됩니다. 대표 가중치 Moran I는 0.8860 <!-- fact:spatial_nasa_tavg_sen_slope_STATION_LINKED_Moran_I -->에서 0.6957 <!-- fact:spatial_nasa_tavg_sen_slope_UNIQUE_GRID_Moran_I -->로 달라지므로 중복의 크기 효과는 무시할 수 없습니다.
+
+- Bias·RMSE의 공간구조는 저장된 기간·가중치 검토에서 반복됩니다. 해안거리와의 연관도 반복되지만, 지형·고도·격자 대표성과 분리된 인과효과를 입증한 것은 아닙니다.
+
+- KMA TAVG 공간군집은 DIRECTION_SENSITIVE <!-- fact:trajectory_kma_tavg_sen_slope_STATION_LINKED_period_robustness -->로 분류됩니다. 고정 Tier A의 가장 긴 기간과 가장 짧은 기간 기울기 중앙값은 각각 0.3888 <!-- fact:window_1981_KMA_TAVG_median -->, 0.5658 <!-- fact:window_2001_KMA_TAVG_median --> °C/decade로 다릅니다. 이를 가속화로 단정하지 않습니다.
+
+## 미리보기
+
+![common period kma nasa tavg scatter.png](docs/assets/final/common_period_kma_nasa_tavg_scatter.png)
+
+![kma tavg median slope by start year.png](docs/assets/final/kma_tavg_median_slope_by_start_year.png)
+
+![nasa station vs grid moran.png](docs/assets/final/nasa_station_vs_grid_moran.png)
+
+## 구조
+
+```mermaid
+flowchart LR
+  A[공식 API와 metadata] --> B[raw cache · checkpoint]
+  B --> C[정제 · screening · 품질]
+  C --> D[추세 · validation · 공간분석]
+  D --> E[기간 · 격자 · 모형 검증]
+  E --> F[검증된 CSV와 manifest]
+  F --> G[Final fact · evidence layer]
+  G --> H[보고서 · 포트폴리오 · read-only UI]
+```
+
+최종 통합 경로는 저장된 CSV에서 시작합니다. 앞 단계 API·추정 경로는 다시 실행하지 않습니다.
+
+## 데이터와 방법
+
+NASA POWER: NASA Langley Research Center의 POWER 프로젝트(Earth Science Division 지원), Daily Point 서비스. 기온 변수 T2M/T2M_MAX/T2M_MIN, 단위 °C, 요청 시간기준 LST. KMA ASOS: 기상청 지상(종관, ASOS) 일자료 조회서비스, 지점 일평균·최고·최저기온(°C). KHOA coastline: 해양수산부 국립해양조사원 해안선. 해안거리 단위 km. 데이터의 서비스 버전·취득일은 보존된 원본 metadata/manifest를 기준으로 하며 누락 정보는 추정하지 않습니다.
+
+Sen/MK/BH-FDR, normal/anomaly, 계절·threshold proxy, Bias/MAE/RMSE·상관, Global/Local Moran, 격자·해안·모형·기간 검증. [최종 방법](docs/FINAL_METHODS_SUMMARY.md).
+
+## Quick Start
+
+Python 3.11 이상. 경량 GitHub 소스 또는 제공받은 프로젝트 폴더에서:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m pytest tests/test_public_release.py -q
+streamlit run streamlit_app.py
+```
+
+최종 통합과 UI는 API를 호출하지 않습니다. 포함된 최소 요약으로 Home의 핵심 결과를 읽을 수 있습니다. 나머지 분석 페이지·전체 테스트·보고서 재생성에는 별도 연구 cache가 필요합니다. cache 없는 페이지는 자료 부족을 안내하며 자동 다운로드하지 않습니다. 의존성 설치에는 인터넷이 필요할 수 있지만 demo 열람과 위 테스트에는 API 키가 필요 없습니다. [재현 가이드](docs/REPRODUCIBILITY.md).
+
+## 결과물
+
+[Executive Summary](output/public_demo/EXECUTIVE_SUMMARY.md) · [Fact layer](output/public_demo/final_research_fact_layer.csv) · [증거표](output/public_demo/final_evidence_matrix.csv) · [사본 무결성](output/public_demo/public_demo_manifest.json).
+
+전체 최종 HTML/Markdown 보고서는 `output/final/report/`에 로컬 보존하며, 추가 공개 선택사항입니다. 연구 cache 없이 제공되는 demo는 연구 전체 재현을 대신하지 않습니다.
+
+## 해석의 한계
+
+관측소 중앙값은 면적가중 전국 평균이 아닙니다. NASA 격자와 ASOS 지점의 공간대표성이 다릅니다. 상관은 정확도 또는 인과성을 뜻하지 않습니다. 고온일수는 공식 폭염·열대야 통계가 아닌 threshold proxy입니다. 분석기간·관측소 집합·공간가중치를 함께 확인해야 합니다. [전체 한계](docs/FINAL_LIMITATIONS.md).
+
+## 재현성과 공개 정책
+
+[문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. 코드의 MIT License, 공개용 Git identity 및 첫 로컬 commit이 승인되었습니다. GitHub 저장소 생성, remote, push, tag, Release는 이번 로컬 작업에 포함하지 않습니다.
+
+## 포트폴리오
+
+[전체 설명](docs/FINAL_PORTFOLIO.md) · [기술 요약](docs/TECHNICAL_PORTFOLIO_SUMMARY.md) · [이력서 bullet](docs/RESUME_BULLETS.md) · [면접 질문](docs/INTERVIEW_NOTES.md) · [짧은 pitch](docs/PROJECT_PITCH_60SEC.md).

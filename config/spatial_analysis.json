@@ -1,0 +1,14 @@
+{
+  "distance_metric": "haversine",
+  "earth_radius_km": 6371.0088,
+  "spatial_weights_method": "knn",
+  "knn_k": 4,
+  "sensitivity_knn_k": [3, 4, 5],
+  "distance_threshold_km": 100.0,
+  "moran_permutations": 999,
+  "local_moran_permutations": 999,
+  "random_seed": 20250905,
+  "coastal_distance_threshold_km": 30.0,
+  "coastal_threshold_sensitivity_km": [20.0, 30.0, 50.0],
+  "fdr_alpha": 0.05
+}

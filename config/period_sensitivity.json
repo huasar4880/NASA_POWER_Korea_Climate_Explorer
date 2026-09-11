@@ -1,0 +1,15 @@
+{
+  "start_years": [1981, 1986, 1991, 1996, 2001],
+  "end_year": 2025,
+  "minimum_window_years": 25,
+  "alpha": 0.05,
+  "moran_permutations": 999,
+  "random_seed": 20250905,
+  "main_weight": "directed_knn_k4",
+  "sensitivity_weights": ["directed_knn_k3", "directed_knn_k5", "symmetric_knn_k4", "inverse_distance_p2_row"],
+  "main_coastal_threshold_km": 30,
+  "coastal_sensitivity_thresholds_km": [20, 50],
+  "representative_start_years": [1981, 1991, 2001],
+  "spatial_stable_fraction": 0.8,
+  "spatial_large_I_range": 0.2
+}

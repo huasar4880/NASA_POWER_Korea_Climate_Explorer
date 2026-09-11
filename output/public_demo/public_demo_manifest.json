@@ -1,0 +1,20 @@
+{
+  "release_version": "1.1.0",
+  "previous_version": "1.0.0",
+  "verified": true,
+  "scope": "Saved facts and evidence only; full research archive is not included",
+  "source_manifest": "output/final/final_research_fact_manifest.json",
+  "source_manifest_sha256": "64ef15f0dac81bf08b51f47f9855f0252388c10ce84a4526fcc40081b29a2acf",
+  "payload_hashes": {
+    "EXECUTIVE_SUMMARY.md": "a8e35a86ab2425608866db42fdec9f438eb988df7708e1a85c0e02b3158b5af4",
+    "final_evidence_matrix.csv": "86b5397b32b03034e0f846b2099beaaed8478fc478df32d60cc7f8a207fbe1cb",
+    "final_research_fact_layer.csv": "5d3d7b1d171e9bb43ba4c599faba00d13eb1bd430272c22244391d5be56715a3"
+  },
+  "NASA_API_calls": 0,
+  "KMA_API_calls": 0,
+  "figures": {
+    "docs/assets/final/common_period_kma_nasa_tavg_scatter.png": "610b6456d78020b31b5adbf2683a99a0666e217ab7a240e2b74674c838ea009f",
+    "docs/assets/final/kma_tavg_median_slope_by_start_year.png": "19d3caca353c36fe6f67d8c646f73fc011d7dab11304e8227e0ec135574bdfb0",
+    "docs/assets/final/nasa_station_vs_grid_moran.png": "b6a4207627210085a066535102cb710160b711a983af79034bde788c3d12d279"
+  }
+}

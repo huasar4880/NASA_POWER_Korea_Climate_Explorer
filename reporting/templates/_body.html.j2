@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · NASA POWER Korea Climate Explorer</title>
+  <style>{{ css|safe }}</style>
+</head>
+<body>
+<main>
+  <header class="cover">
+    <div class="eyebrow">NASA POWER KOREA CLIMATE EXPLORER · RESEARCH REPORT</div>
+    <h1>{{ title }}</h1>
+    <p class="subtitle">저장된 분석 결과에 기반한 재현 가능한 기후통계 보고서</p>
+    <dl class="metadata">
+      <div><dt>분석기간</dt><dd>{{ period }}</dd></div>
+      <div><dt>Climate normal</dt><dd>{{ normal_period }}</dd></div>
+      <div><dt>보고서 생성시점 (UTC)</dt><dd>{{ generated_at }}</dd></div>
+      <div><dt>자료</dt><dd>NASA POWER · KMA ASOS</dd></div>
+    </dl>
+    <p class="cover-note">과거 관측·격자자료의 비교입니다. 미래 예측 또는 종합 기후위험도 평가가 아닙니다.</p>
+  </header>
+  <div class="kpis">
+  {% for kpi in kpis %}
+    <div class="kpi"><div class="kpi-label">{{ kpi.label }}</div><div class="kpi-value"><span data-fact="{{ kpi.id }}">{{ kpi.value|fmt(kpi.column) }}</span> <small>{{ kpi.unit }}</small></div><div class="kpi-source">{{ kpi.source }}</div></div>
+  {% endfor %}
+  </div>
+  <nav class="contents" aria-label="보고서 목차"><h2>목차</h2><ol>{% for section in sections %}<li><a href="#section-{{ loop.index }}">{{ section.title }}</a></li>{% endfor %}<li><a href="#sources">Data Sources</a></li></ol></nav>
+  {% for section in sections %}
+  <section id="section-{{ loop.index }}">
+    <h2><span class="section-number">{{ '%02d'|format(loop.index) }}</span> {{ section.title }}</h2>
+    {% if section.caveat %}<aside class="caveat"><strong>해석상 주의</strong><p>{{ section.caveat }}</p></aside>{% endif %}
+    {% if section.paragraphs %}<ul class="findings">{% for text in section.paragraphs %}<li>{{ text }}</li>{% endfor %}</ul>{% endif %}
+    {% for key in section.charts %}
+    <figure><img src="{{ charts[key].src }}" alt="{{ charts[key].title }}" loading="lazy"><figcaption>{{ charts[key].title }} · {{ charts[key].operation }}</figcaption></figure>
+    {% endfor %}
+    {% for table in section.tables %}
+    <div class="table-block"><h3>{{ table.title }}</h3><div class="table-scroll">
+      <table data-source="{{ table.source_file }}"><thead><tr>{% for col in table.columns %}<th scope="col">{{ col.label }}</th>{% endfor %}</tr></thead>
+      <tbody>{% for row in table.rows %}<tr>{% for col in table.columns %}<td data-column="{{ col.key }}">{{ row[col.key]|fmt(col.key) }}</td>{% endfor %}</tr>{% endfor %}</tbody></table>
+    </div><p class="source-note">출처: <a href="{{ table.source_href }}">{{ table.source_file }}</a>. 자료 없음은 0이 아닙니다. 표의 표시 반올림은 원본 CSV를 변경하지 않습니다.</p></div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+  <section id="sources"><h2>Data Sources</h2>
+    <p>보고서 생성일과 분석기간을 구분합니다. 아래 수정시점은 원본 결과 CSV의 파일 수정시점이며 관측일이나 분석 완료일을 보증하지 않습니다. 각 숫자의 행·컬럼과 SHA-256은 별도 report manifest에 기록됩니다.</p>
+    <ul>{% for label, url in source_links %}<li><a href="{{ url }}">{{ label }}</a></li>{% endfor %}</ul>
+    <div class="table-scroll"><table><thead><tr><th>프로젝트 결과 파일</th><th>수정시점 (UTC)</th><th>행 수</th></tr></thead><tbody>{% for source in sources %}<tr><td><a href="{{ source.href }}">{{ source.file }}</a></td><td>{{ source.modified_at }}</td><td>{{ source.row_count }}</td></tr>{% endfor %}</tbody></table></div>
+  </section>
+  <footer>Deterministic CSV report · 외부 API 호출 없음 · 새로운 통계모형 적합 없음</footer>
+</main>
+</body>
+</html>

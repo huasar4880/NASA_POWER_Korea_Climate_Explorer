@@ -1,0 +1,152 @@
+{
+  "metadata_source": "https://data.kma.go.kr/tmeta/stn/selectStnList.do",
+  "gangneung_linkage_source": "https://data.kma.go.kr/climate/RankState/selectRankStatisticsDivisionList.do?pgmNo=188",
+  "stations": {
+    "seoul": {
+      "city": "Seoul",
+      "segments": [
+        {
+          "station_id": "108",
+          "station_name": "Seoul",
+          "latitude": 37.57142,
+          "longitude": 126.96580,
+          "elevation_m": 85.67,
+          "observation_start": "1907-10-01",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=108"
+        }
+      ]
+    },
+    "busan": {
+      "city": "Busan",
+      "segments": [
+        {
+          "station_id": "159",
+          "station_name": "Busan",
+          "latitude": 35.10468,
+          "longitude": 129.03203,
+          "elevation_m": 69.56,
+          "observation_start": "1904-04-09",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=159"
+        }
+      ]
+    },
+    "daejeon": {
+      "city": "Daejeon",
+      "segments": [
+        {
+          "station_id": "133",
+          "station_name": "Daejeon",
+          "latitude": 36.37199,
+          "longitude": 127.37210,
+          "elevation_m": 67.79,
+          "observation_start": "1968-12-19",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=133"
+        }
+      ]
+    },
+    "daegu": {
+      "city": "Daegu",
+      "segments": [
+        {
+          "station_id": "143",
+          "station_name": "Daegu",
+          "latitude": 35.87797,
+          "longitude": 128.65296,
+          "elevation_m": 54.27,
+          "observation_start": "1907-01-31",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=143"
+        }
+      ]
+    },
+    "gwangju": {
+      "city": "Gwangju",
+      "segments": [
+        {
+          "station_id": "156",
+          "station_name": "Gwangju",
+          "latitude": 35.17294,
+          "longitude": 126.89156,
+          "elevation_m": 70.28,
+          "observation_start": "1939-05-01",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=156"
+        }
+      ]
+    },
+    "gangneung": {
+      "city": "Gangneung",
+      "mapping_note": "KMA national temperature statistics use Gangneung (105). Bukgangneung (104) is downloaded only for overlap/continuity assessment; it is not spliced into the primary daily temperature series.",
+      "segments": [
+        {
+          "station_id": "105",
+          "station_name": "Gangneung",
+          "latitude": 37.75147,
+          "longitude": 128.89099,
+          "elevation_m": 27.12,
+          "observation_start": "1911-10-03",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "download_start": "1981-01-01",
+          "download_end": "2025-12-31",
+          "role": "primary",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=105"
+        },
+        {
+          "station_id": "104",
+          "station_name": "Bukgangneung",
+          "latitude": 37.80456,
+          "longitude": 128.85535,
+          "elevation_m": 75.24,
+          "observation_start": "2008-07-28",
+          "use_start": "2008-07-28",
+          "use_end": "2025-12-31",
+          "download_start": "2008-07-28",
+          "download_end": "2025-12-31",
+          "role": "continuity_only",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=104"
+        }
+      ]
+    },
+    "jeju": {
+      "city": "Jeju",
+      "segments": [
+        {
+          "station_id": "184",
+          "station_name": "Jeju",
+          "latitude": 33.51411,
+          "longitude": 126.52969,
+          "elevation_m": 20.79,
+          "observation_start": "1923-05-01",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=184"
+        }
+      ]
+    },
+    "jeonju": {
+      "city": "Jeonju",
+      "segments": [
+        {
+          "station_id": "146",
+          "station_name": "Jeonju",
+          "latitude": 35.84092,
+          "longitude": 127.11718,
+          "elevation_m": 60.44,
+          "observation_start": "1918-06-23",
+          "use_start": "1981-01-01",
+          "use_end": "2025-12-31",
+          "metadata_url": "https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=146"
+        }
+      ]
+    }
+  }
+}

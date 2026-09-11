@@ -1,0 +1,53 @@
+# {{ title|md }}
+
+NASA POWER Korea Climate Explorer · Research Report
+
+분석기간: {{ period }}  
+Climate normal: {{ normal_period }}  
+보고서 생성시점 (UTC): {{ generated_at }}  
+자료: NASA POWER · KMA ASOS
+
+과거 관측·격자자료의 비교입니다. 미래 예측 또는 종합 기후위험도 평가가 아닙니다.
+
+## 핵심 수치
+
+| 항목 | 값 | 단위 | 출처 |
+|---|---:|---|---|
+{% for kpi in kpis -%}
+| {{ kpi.label|md }} | <!-- fact:{{ kpi.id }} -->{{ kpi.value|fmt(kpi.column) }}<!-- /fact --> | {{ kpi.unit|md }} | {{ kpi.source|md }} |
+{% endfor %}
+{% for section in sections %}
+## {{ loop.index }}. {{ section.title|md }}
+
+{% if section.caveat %}> 해석상 주의: {{ section.caveat|md }}
+
+{% endif %}{% for text in section.paragraphs %}- {{ text|md }}
+{% endfor %}
+{% for key in section.charts %}
+![{{ charts[key].title|md }}]({{ charts[key].relative }})
+
+{{ charts[key].operation|md }}
+
+{% endfor %}{% for table in section.tables %}
+### {{ table.title|md }}
+
+|{% for col in table.columns %} {{ col.label|md }} |{% endfor %}
+|{% for col in table.columns %}---|{% endfor %}
+{% for row in table.rows -%}
+|{% for col in table.columns %} {{ row[col.key]|fmt(col.key)|md }} |{% endfor %}
+{% endfor %}
+출처: [{{ table.source_file|md }}]({{ table.source_href }}). 자료 없음은 0이 아니며 표시 반올림은 원본을 변경하지 않습니다.
+
+{% endfor %}{% endfor %}
+## Data Sources
+
+보고서 생성일과 분석기간은 다릅니다. 수정시점은 결과 CSV의 파일 수정시점이며 관측일이나 분석 완료일을 보증하지 않습니다. 숫자의 행·컬럼과 SHA-256은 별도 report manifest를 참조하세요.
+
+{% for label, url in source_links %}- [{{ label|md }}]({{ url }})
+{% endfor %}
+| 프로젝트 결과 파일 | 수정시점 (UTC) | 행 수 |
+|---|---|---:|
+{% for source in sources -%}
+| [{{ source.file|md }}]({{ source.href }}) | {{ source.modified_at }} | {{ source.row_count }} |
+{% endfor %}
+Deterministic CSV report · 외부 API 호출 없음 · 새로운 통계모형 적합 없음
