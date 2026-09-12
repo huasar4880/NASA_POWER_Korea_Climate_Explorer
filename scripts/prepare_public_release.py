@@ -26,7 +26,9 @@ FIGURES = (
 )
 ROOT_FILES = {'.gitignore', '.env.example', 'VERSION', 'LICENSE', 'README.md', 'CHANGELOG.md',
               'AGENTS.md', 'requirements.txt', 'main.py', 'streamlit_app.py',
-              '.streamlit/config.toml', 'public_app/requirements.txt'}
+              '.streamlit/config.toml', 'public_app/requirements.txt',
+              '.devcontainer/devcontainer.json',
+              'output/final/release/v1.1.0_public_demo_deployment_manifest.json'}
 SOURCE_DIRS = {'src', 'dashboard', 'reporting', 'scripts', 'tests', 'config', 'public_app'}
 DEMO_FILES = {'EXECUTIVE_SUMMARY.md', 'final_research_fact_layer.csv',
               'final_evidence_matrix.csv', 'public_demo_manifest.json'}

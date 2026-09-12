@@ -1,15 +1,16 @@
 # Selective staging preview — COMMIT candidates only
 # Includes this preview; size solved to a fixed point. No private file values.
-file_count: 248
-total_bytes: 3759147
+file_count: 252
+total_bytes: 3776603
 category	bytes	path
+COMMIT	972	.devcontainer/devcontainer.json
 COMMIT	115	.env.example
 COMMIT	1150	.gitignore
 COMMIT	84	.streamlit/config.toml
 COMMIT	1108	AGENTS.md
 COMMIT	5301	CHANGELOG.md
 COMMIT	1067	LICENSE
-COMMIT	8135	README.md
+COMMIT	9241	README.md
 COMMIT	6	VERSION
 COMMIT	5032	config/kma_stations.json
 COMMIT	739	config/locations.json
@@ -52,12 +53,12 @@ COMMIT	12265	docs/COMMON_PERIOD_51_STATION_SPATIAL_REANALYSIS.md
 COMMIT	4011	docs/DATA_PIPELINE.md
 COMMIT	1903	docs/FINAL_LIMITATIONS.md
 COMMIT	3912	docs/FINAL_METHODS_SUMMARY.md
-COMMIT	8887	docs/FINAL_PORTFOLIO.md
+COMMIT	9846	docs/FINAL_PORTFOLIO.md
 COMMIT	17707	docs/FINAL_RESULTS_SUMMARY.md
 COMMIT	3264	docs/GITHUB_DATA_POLICY.md
-COMMIT	3327	docs/GITHUB_PUBLICATION_PLAN.md
-COMMIT	10661	docs/GITHUB_STAGED_FILE_PREVIEW.txt
-COMMIT	2274	docs/INDEX.md
+COMMIT	4620	docs/GITHUB_PUBLICATION_PLAN.md
+COMMIT	10871	docs/GITHUB_STAGED_FILE_PREVIEW.txt
+COMMIT	2329	docs/INDEX.md
 COMMIT	8459	docs/INTERVIEW_NOTES.md
 COMMIT	5622	docs/METHODOLOGY.md
 COMMIT	9689	docs/NATIONWIDE_ASOS_SCREENING.md
@@ -65,20 +66,21 @@ COMMIT	7579	docs/NATIONWIDE_SPATIAL_ANALYSIS.md
 COMMIT	7386	docs/NATIONWIDE_TIER_A_ANALYSIS.md
 COMMIT	3977	docs/PORTFOLIO.md
 COMMIT	1692	docs/PORTFOLIO_SUMMARY.md
-COMMIT	1867	docs/PROJECT_PITCH_60SEC.md
-COMMIT	3393	docs/PROJECT_STORY_3MIN.md
+COMMIT	1823	docs/PROJECT_PITCH_60SEC.md
+COMMIT	3778	docs/PROJECT_STORY_3MIN.md
 COMMIT	53785	docs/PROJECT_TECHNICAL_REFERENCE.md
-COMMIT	4233	docs/PUBLIC_DEMO_DEPLOYMENT.md
-COMMIT	2829	docs/RELEASE_CHECKLIST.md
+COMMIT	5459	docs/PUBLIC_DEMO_DEPLOYMENT.md
+COMMIT	2185	docs/PUBLIC_PORTFOLIO_LINKS.md
+COMMIT	4322	docs/RELEASE_CHECKLIST.md
 COMMIT	4543	docs/REPRODUCIBILITY.md
 COMMIT	5418	docs/RESULTS_SUMMARY.md
-COMMIT	2145	docs/RESUME_BULLETS.md
+COMMIT	2277	docs/RESUME_BULLETS.md
 COMMIT	8579	docs/ROADMAP.md
 COMMIT	12912	docs/SPATIAL_DEPENDENCE_ADJUSTED_MODELING.md
 COMMIT	12796	docs/SPATIAL_MODEL_NUMERICAL_ROBUSTNESS.md
 COMMIT	12003	docs/SPATIAL_ROBUSTNESS_AND_COASTAL_ANALYSIS.md
 COMMIT	34478	docs/STAGE_HISTORY.md
-COMMIT	5711	docs/TECHNICAL_PORTFOLIO_SUMMARY.md
+COMMIT	6519	docs/TECHNICAL_PORTFOLIO_SUMMARY.md
 COMMIT	11954	docs/TIER_B_1991_2025_ANALYSIS.md
 COMMIT	14298	docs/TREND_PERIOD_SENSITIVITY_ANALYSIS.md
 COMMIT	4174	docs/V1_INTERVIEW_NOTES.md
@@ -88,6 +90,7 @@ COMMIT	69191	docs/assets/final/common_period_kma_nasa_tavg_scatter.png
 COMMIT	58789	docs/assets/final/kma_tavg_median_slope_by_start_year.png
 COMMIT	41722	docs/assets/final/nasa_station_vs_grid_moran.png
 COMMIT	47775	main.py
+COMMIT	3745	output/final/release/v1.1.0_public_demo_deployment_manifest.json
 COMMIT	3963	output/public_demo/EXECUTIVE_SUMMARY.md
 COMMIT	1159797	output/public_demo/deployment/Final_Research_Report.html
 COMMIT	115789	output/public_demo/deployment/common_period_bias_rmse.png
@@ -120,7 +123,7 @@ COMMIT	266	requirements.txt
 COMMIT	57	scripts/__init__.py
 COMMIT	932	scripts/build_final_integration.py
 COMMIT	7428	scripts/check_release_safety.py
-COMMIT	15169	scripts/prepare_public_release.py
+COMMIT	15300	scripts/prepare_public_release.py
 COMMIT	938	scripts/review_spatial_numerics.py
 COMMIT	3875	scripts/verify_common_period.py
 COMMIT	4164	scripts/verify_common_period_spatial.py
@@ -237,6 +240,7 @@ COMMIT	13839	tests/test_nationwide_screening.py
 COMMIT	13900	tests/test_nationwide_tier_a_analysis.py
 COMMIT	23947	tests/test_period_sensitivity.py
 COMMIT	5226	tests/test_public_demo.py
+COMMIT	2800	tests/test_public_link_security.py
 COMMIT	9287	tests/test_public_release.py
 COMMIT	1515	tests/test_release.py
 COMMIT	1701	tests/test_release_preparation.py

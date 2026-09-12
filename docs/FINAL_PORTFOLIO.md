@@ -101,7 +101,15 @@ Python, pandas, NumPy, SciPy, statsmodels, pymannkendall로 정제·기술통계
 
 ## 결과물
 
-[연구결과 요약](FINAL_RESULTS_SUMMARY.md), [방법](FINAL_METHODS_SUMMARY.md), [Executive Summary](../output/public_demo/EXECUTIVE_SUMMARY.md), 로컬 `output/final/report/`의 전체 보고서(선택 공개), Streamlit Home·Reports 및 기존 분석 페이지.
+[연구결과 요약](FINAL_RESULTS_SUMMARY.md), [방법](FINAL_METHODS_SUMMARY.md), [Executive Summary](../output/public_demo/EXECUTIVE_SUMMARY.md)와 검증된 연구보고서·대시보드로 전달합니다. 원래 연구 archive는 로컬에 보존합니다.
+
+### Public Demo / 공개 결과물
+
+분석결과를 Streamlit Community Cloud에 공개 배포해 별도 API 키나 원자료 없이 핵심 결과를 확인할 수 있도록 구성했습니다. 7개 공개 화면은 저장된 검증 결과만 읽으며, 전체 18개 연구 화면과 분석 파이프라인은 별도 연구 모드로 유지합니다.
+
+[Live Dashboard](https://korea-climate-explorer.streamlit.app/) · [GitHub Repository](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer) · [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0) · [Research Report](../output/public_demo/deployment/Final_Research_Report.html)
+
+핵심 결과를 빠르게 볼 때는 데모를, 방법과 한계를 검토할 때는 다운로드 가능한 보고서를 권합니다. [링크별 활용 안내](PUBLIC_PORTFOLIO_LINKS.md).
 
 ## 한계
 
@@ -125,4 +133,4 @@ Python, pandas, NumPy, SciPy, statsmodels, pymannkendall로 정제·기술통계
 
 ## 다음 단계
 
-사용자 검토 후 코드 라이선스·공개 범위·release 버전을 결정합니다. 미래예측이나 인과모형은 이번 결과에서 수행했다고 주장하지 않습니다.
+MIT 코드 공개, v1.1.0 Release와 공개 데모 배포를 완료했습니다. 이후 변경은 연구 범위와 기존 결과 보존 원칙을 별도로 검토합니다. 미래예측이나 인과모형은 이번 결과에서 수행했다고 주장하지 않습니다.

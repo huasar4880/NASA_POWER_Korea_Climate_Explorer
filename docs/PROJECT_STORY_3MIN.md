@@ -55,3 +55,5 @@
 ## 성과
 
 원자료에서 보고서 문장까지 출처를 추적하는 fact layer, 회귀 테스트와 읽기 전용 UI로 전달했습니다. 이 설명은 실제 담당 역할에 맞게 조정하며 자료의 한계와 미실행 기능을 숨기지 않습니다.
+
+GitHub v1.1.0 Release와 [Streamlit 공개 배포](https://korea-climate-explorer.streamlit.app/)를 완료했습니다. 검증된 공개 파일만으로 실행되는 reproducible demo는 API 키·raw cache 없이 열람할 수 있고, 전체 연구 파이프라인은 별도 archive를 사용하는 모드로 보존했습니다. [공개 결과물 링크](PUBLIC_PORTFOLIO_LINKS.md).

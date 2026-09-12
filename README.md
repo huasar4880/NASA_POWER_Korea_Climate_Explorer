@@ -8,6 +8,25 @@ Data: KMA ASOS, NASA POWER, KHOA source data remain subject to the respective pr
 
 전국 장기 기온변화의 강건한 발견과 조건부 발견을 구분하는 NASA POWER × KMA ASOS 연구 플랫폼.
 
+## Live Demo
+
+🌐 **[Streamlit Dashboard 바로 열기](https://korea-climate-explorer.streamlit.app/)** · [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0) · [공개 링크 모음](docs/PUBLIC_PORTFOLIO_LINKS.md)
+
+The public dashboard presents validated precomputed outputs and does not require API keys or local raw-data caches. 로그인 없이 7개 핵심 화면을 열람할 수 있으며, 전체 연구 파이프라인과 18-page 연구 모드는 저장소에 유지합니다.
+
+## Quick Start
+
+설치 없이 위 Live Demo를 열거나, Python 환경에서 공개 데모를 실행하세요.
+
+```bash
+python -m pip install -r public_app/requirements.txt
+streamlit run public_app/streamlit_app.py
+```
+
+[가상환경 설치·테스트·전체 연구 모드](#로컬-설치와-전체-연구-모드) · [Final Research Report](output/public_demo/deployment/Final_Research_Report.html) — 보고서는 Live Demo에서 다운로드 후 브라우저로 열 수 있습니다.
+
+## 연구 범위
+
 공식 inventory 105 <!-- fact:inventory_n -->개, Tier A 45 <!-- fact:tier_a -->개, Tier B 6 <!-- fact:tier_b -->개, 공통기간 51 <!-- fact:common_n -->개 지점 및 NASA 고유 격자 34 <!-- fact:grid_n -->개. 장기 1981-01-01~2025-12-31 <!-- fact:long_period -->, 공통기간 1991-01-01–2025-12-31 <!-- fact:common_period -->, normal 1991–2020 <!-- fact:normal -->.
 
 19단계 기준 전체 pytest: 711/711 통과. 역사적 근거: `output/final/final_test_summary.csv`(로컬 연구 아카이브). 현재 릴리스 검증은 [공개 점검표](docs/RELEASE_CHECKLIST.md)를 따릅니다.
@@ -57,7 +76,7 @@ NASA POWER: NASA Langley Research Center의 POWER 프로젝트(Earth Science Div
 
 Sen/MK/BH-FDR, normal/anomaly, 계절·threshold proxy, Bias/MAE/RMSE·상관, Global/Local Moran, 격자·해안·모형·기간 검증. [최종 방법](docs/FINAL_METHODS_SUMMARY.md).
 
-## Quick Start
+## 로컬 설치와 전체 연구 모드
 
 공개 데모는 Python 3.13에서 별도 설치 검증했습니다. GitHub 소스 폴더에서:
 
@@ -86,7 +105,7 @@ streamlit run streamlit_app.py
 
 ## 재현성과 공개 정책
 
-[문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. [공개 저장소](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer)와 [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0)는 발행되어 있습니다. 이후 public demo 개선은 main에 추가하며 기존 v1.1.0 tag를 이동하지 않습니다. 실제 데모 배포 URL이 확인되기 전에는 Live Demo 링크나 배포 완료 문구를 게시하지 않습니다.
+[문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. [공개 저장소](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer), [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0), [Streamlit 공개 데모](https://korea-climate-explorer.streamlit.app/)가 발행되어 있습니다. 후속 문서 변경은 main에 추가하며 기존 v1.1.0 tag를 이동하지 않습니다. 이번 링크 통합에서는 버전 변경이나 v1.1.1 발행을 하지 않습니다.
 
 ## 포트폴리오
 

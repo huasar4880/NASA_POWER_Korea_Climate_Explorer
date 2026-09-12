@@ -1,5 +1,14 @@
 # GitHub Publication Plan — v1.1.0
 
+## 현재 공개 상태
+
+Repository published = YES · v1.1.0 Release = YES · Public Streamlit demo = YES.
+
+[Repository](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer) · [Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0) · [Live Demo](https://korea-climate-explorer.streamlit.app/) · [공개 링크 패키지](PUBLIC_PORTFOLIO_LINKS.md).
+
+공개 데모의 로그인 없는 Home과 7개 탐색 메뉴를 확인했습니다. 전체 연구 원자료·cache 제외 정책은 유지합니다.
+이번 변경은 release 이후 main의 문서·링크 통합이며, VERSION 1.1.0과 기존 tag는 그대로 유지하고 v1.1.1은 만들지 않습니다.
+
 ## COMMIT
 
 `src/`, `dashboard/`, `reporting/`(템플릿 포함), `scripts/`, `tests/`, 작은 `config/`,
@@ -22,7 +31,11 @@
 `.env`와 변형, `.streamlit/secrets*`, raw / processed / KMA / NASA / nationwide /
 common-period / period-subset cache를 포함한 `data/` 전체, 해안선 원자료·변환 geometry,
 기존 대용량 output, 내부 QA, 로그, 임시파일, `.venv/`, Python/도구 cache.
-`output/final/release/`의 로컬 검증 manifest·snapshot도 첫 commit에서 제외합니다.
+`output/final/release/`의 내부 QA·snapshot·이전 검증 기록은 계속 추적하지 않습니다.
+사용자 승인 예외는 `.devcontainer/devcontainer.json`과
+`output/final/release/v1.1.0_public_demo_deployment_manifest.json` 두 literal exact path뿐입니다.
+디렉터리 wildcard를 허용하지 않으며, 배포 manifest에는 공개 URL·버전·검증 결과만 기록합니다.
+기존 Git ignore 규칙은 유지하므로 새 manifest를 처음 stage할 때는 해당 파일 하나만 명시적으로 강제 추가합니다. 이는 force push가 아닙니다.
 **제외는 Git 추적 제외이며 파일 삭제가 아닙니다.**
 
 ## 로컬 Git과 승인 범위
@@ -35,7 +48,7 @@ common-period / period-subset cache를 포함한 `data/` 전체, 해안선 원�
 위 첫 commit 정책은 당시 승인 범위의 기록입니다. 현재 GitHub 공개와 v1.1.0 Release는 완료됐습니다.
 22단계에서는 공개 데모 개선 commit을 main에 추가할 수 있으나 기존 tag 이동·force push·자동 patch release는 금지합니다.
 **Code License: [MIT](../LICENSE).** 공개용 이름과 GitHub noreply 주소는 사용자 승인 정보이며, 이 저장소의 local Git 설정에만 사용합니다. 다른 개인 이메일·API 키·개인 절대경로는 허용하지 않습니다.
-기술 준비 완료와 실제 공개 승인은 별개입니다. [Release Checklist](RELEASE_CHECKLIST.md).
+현재 저장소·Release·공개 데모가 발행됐습니다. 과거 승인 대기 상태는 당시 작업 기록이며 현재 배포 상태와 구분합니다. [Release Checklist](RELEASE_CHECKLIST.md).
 
 ## 보존 및 용량 증거
 

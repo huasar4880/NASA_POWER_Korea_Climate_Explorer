@@ -14,7 +14,7 @@
 
 - 통계적으로 불안정한 결과를 제외 기준과 함께 보존하고, source-addressable fact layer·SHA256·회귀 테스트로 보고서 재현성 구축.
 
-- 읽기 전용 Streamlit 대시보드, 최종 연구보고서, 공개 범위·비밀정보 검사를 연결한 전달 패키지 구성.
+- 검증된 KMA ASOS·NASA POWER 분석결과를 API 키·원자료 없이 열람하는 Streamlit Community Cloud 공개 대시보드로 배포하고 연구보고서·GitHub 공개 문서를 연결.
 
 ## English
 
@@ -28,4 +28,4 @@
 
 - Preserved failed model diagnostics and implemented source-addressable facts, checksums and regression tests for reproducible reporting.
 
-- Integrated a read-only Streamlit interface, research report and publication-safety documentation without rerunning data downloads.
+- Publicly deployed validated KMA ASOS and NASA POWER results on Streamlit Community Cloud, linking the research report and GitHub documentation without requiring API keys or raw-data caches at runtime.

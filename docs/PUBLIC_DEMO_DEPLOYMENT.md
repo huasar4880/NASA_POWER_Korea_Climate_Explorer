@@ -1,7 +1,13 @@
 # Public Streamlit Demo — v1.1.0
 
 검증된 precomputed 결과를 읽는 경량 공개 UI입니다. 신규 분석·API 호출·raw 배포를 하지 않습니다.
-main의 후속 데모 개선과 기존 v1.1.0 Release/tag는 구분합니다. 실제 live URL 확인 전에는 배포 완료로 표기하지 않습니다.
+main의 후속 데모 개선과 기존 v1.1.0 Release/tag는 구분합니다.
+
+## 배포 완료
+
+[Live Demo](https://korea-climate-explorer.streamlit.app/)가 Streamlit Community Cloud에 공개 배포됐습니다.
+사용자가 시크릿 브라우저의 익명 접근을 확인했고, 링크 통합 작업에서도 로그인 없이 Home과 7개 공개 메뉴의 렌더링을 확인했습니다.
+[공개 링크 패키지](PUBLIC_PORTFOLIO_LINKS.md)에서 저장소·Release·보고서까지 연결합니다.
 
 ## 범위와 설치
 
@@ -20,7 +26,7 @@ streamlit run public_app/streamlit_app.py
 ```
 
 로컬 clean-room 검증 환경은 Python 3.13입니다. 직접 runtime 의존성은 Streamlit 1.62.0과 pandas 3.0.5입니다.
-루트 requirements의 과학·지리공간 패키지는 전체 연구용으로 유지합니다. Cloud Linux 실행은 실제 배포 후 별도 확인해야 합니다.
+루트 requirements의 과학·지리공간 패키지는 전체 연구용으로 유지합니다. Cloud에서 공개 화면 실행을 확인했으나 서버의 정확한 Python 버전과 설치 로그를 재조회한 것은 아닙니다.
 환경변수 없는 루트 entrypoint도 public이 기본이며, Cloud 전용 entrypoint는 항상 public입니다.
 `.env`, Streamlit secrets, NASA/KMA key, `data/` 및 QA 로그가 필요하지 않습니다.
 
@@ -53,11 +59,16 @@ CSV의 source_file은 원래 연구 archive의 provenance이며 공개 저장소
 관측소 결과는 면적가중 전국 평균이 아니며, threshold는 analytical proxy이고 공간 연관성은 인과 추정이 아닙니다.
 결과는 기간·관측소 집합·공간가중치에 민감할 수 있습니다. 전체 원자료와 cache는 공개하지 않습니다.
 
-## 공개 배포 완료 조건
+## 검증 범위와 기록
 
-실제 URL에서 Home, 7개 view, 그림, 보고서 다운로드, desktop/mobile 기본 배치와 secret 미노출을 확인한 뒤
-README Live Demo와 포트폴리오 링크를 추가합니다. 로컬 성공을 Cloud 배포 성공으로 간주하지 않습니다.
-배포 전 증거는 로컬 release/qa/public_demo22와 readiness 기록에 별도 보관합니다.
-배포 완료 manifest는 실제 URL·시각·commit과 smoke test 결과가 있을 때만 생성합니다.
+배포 전 clean-room에서 7개 view, 그림, 보고서 다운로드 및 desktop/mobile 기본 배치를 확인했습니다.
+현재 공개 URL의 접근 확인과 과거 로컬 검증은 구분해 기록하며, 서버의 내부 호출 로그를 실측했다고 주장하지 않습니다.
+공개 소스는 precomputed assets만 읽고 NASA/KMA API나 인증정보를 필요로 하지 않습니다.
+배포 전 release/qa/public_demo22와 readiness 기록은 그대로 보존합니다. 실제 URL·검증 시각·commit·회귀 결과를 기록한
+공개 metadata만 담은 [배포 완료 manifest](../output/final/release/v1.1.0_public_demo_deployment_manifest.json)는 사용자 승인 exact-path 예외로 공개합니다. 내부 QA와 이전 snapshot은 계속 로컬에 보관합니다.
 
-새 commit은 main에 추가하되 v1.1.0 tag는 변경하지 않습니다. 필요하다면 v1.1.1을 후속 후보로 검토하되 자동 발행하지 않습니다.
+공개 개발컨테이너에서는 사용자 승인에 따라 CORS/XSRF 비활성화 옵션과 자동 시스템 업그레이드 명령만 제거했습니다.
+나머지 개발환경 구조와 설치 명령은 유지하며 이번 작업에서 해당 명령이나 컨테이너를 실행하지 않았습니다.
+이는 Streamlit Community Cloud 앱 설정을 변경하거나 그 앱이 이 개발컨테이너를 사용한다고 가정한 작업이 아닙니다.
+
+문서·링크 통합 commit은 main에 추가하되 v1.1.0 tag는 변경하지 않습니다. 이번 단순 문서 변경에는 v1.1.1이 필요하지 않으며 새 release를 만들지 않습니다.

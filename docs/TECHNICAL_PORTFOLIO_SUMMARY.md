@@ -56,3 +56,11 @@ KNN·거리 기반 가중치, Global/Local Moran, 격자 중복, HC3 및 SAR/SEM
 ## 품질 기준
 
 코드 줄 수나 유의한 결과 수를 품질 성과로 내세우지 않습니다. 결과의 적용 범위와 실패 복구 가능성을 기준으로 설명합니다.
+
+## Public deployment
+
+[공개 대시보드](https://korea-climate-explorer.streamlit.app/)를 Streamlit Community Cloud에 배포했습니다. public/demo mode의 7개 view는 검증된 precomputed CSV·PNG·자체 포함형 HTML 보고서만 읽으며 runtime에 API 키나 raw cache를 요구하지 않습니다.
+
+공개 파일만 복사한 Python 3.13 clean-room 환경에서 설치·import·화면·다운로드를 검증했습니다. 경량 의존성(Streamlit/pandas)과 안전한 기본 public mode를 사용하며, 기존 연구 의존성과 18-page full/research mode는 분리·유지합니다. 데모 재현 검증과 원자료부터의 전체 연구 재현은 구분합니다.
+
+[공개 링크 패키지](PUBLIC_PORTFOLIO_LINKS.md) · [배포 설정과 검증 범위](PUBLIC_DEMO_DEPLOYMENT.md).

@@ -1,0 +1,105 @@
+{
+  "version": "1.1.0",
+  "repository": "https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer",
+  "release": "https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0",
+  "live_demo": "https://korea-climate-explorer.streamlit.app/",
+  "provider": "Streamlit Community Cloud",
+  "branch": "main",
+  "entrypoint": "public_app/streamlit_app.py",
+  "public_mode_views": 7,
+  "full_research_views": 18,
+  "anonymous_access_verified": true,
+  "anonymous_access_evidence": [
+    "User reported incognito access without login",
+    "Agent loaded live Home and seven navigation choices without a login step"
+  ],
+  "verified_at": "2026-09-12T02:54:28.449056+00:00",
+  "API_required": false,
+  "raw_cache_required": false,
+  "NASA_API_calls_this_work": 0,
+  "KMA_API_calls_this_work": 0,
+  "remote_server_request_logs_inspected": false,
+  "secret_scan": {
+    "safe": true,
+    "risks": [],
+    "matched_values_disclosed": false,
+    "fixture_exemptions": [
+      "tests/test_kma_asos.py",
+      "tests/test_release.py",
+      "tests/test_reporting.py"
+    ],
+    "exemption_rule": "Obvious mock-only literals; real key matches are never exempt"
+  },
+  "previous_test_result": {
+    "passed": 764,
+    "failed": 0,
+    "new_tests": 0,
+    "warnings": 2,
+    "pip_check": "PASS",
+    "tested_base_commit": "3ca6ca56d5e751aa41c5b9462aeb6997fe21085b",
+    "scope": "Previous documentation candidate, before final exact-path security changes"
+  },
+  "deployment_limitations": [
+    "Precomputed public assets, not full raw archive reproduction",
+    "Full research mode requires separate archive and dependencies",
+    "Exact Cloud Python environment and private runtime logs not inspected"
+  ],
+  "link_integration_status": "DOCUMENTS_AND_LIVE_LINKS_VERIFIED",
+  "final_validation_date": "2026-09-12",
+  "test_result": {
+    "previous_tests": 764,
+    "new_tests": 12,
+    "total": 776,
+    "passed": 776,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 2,
+    "warnings_preexisting": true,
+    "pip_check": "PASS"
+  },
+  "final_security_checks": {
+    "secret_findings": 0,
+    "personal_path_findings": 0,
+    "personal_email_findings": 0,
+    "broken_relative_links": 0,
+    "forbidden_public_files": 0,
+    "files_over_50_MB": 0,
+    "files_over_100_MB": 0
+  },
+  "protected_artifacts": {
+    "file_count": 2135,
+    "content_changed": 0,
+    "mtime_changed": 0
+  },
+  "live_smoke_test": {
+    "home_accessible_without_login_step": true,
+    "public_navigation_choices": 7,
+    "live_demo_HTTP_status": 200,
+    "repository_HTTP_status": 200,
+    "release_HTTP_status": 200,
+    "public_report_HTTP_status": 200,
+    "basis": "Live browser Home and navigation plus public HTTP responses; no Cloud admin settings or private logs inspected"
+  },
+  "validated_base_commit": "b38d2ef821bb887fe2cb1f306a9922fa5c2b74f3",
+  "commit_reference": "The containing Git commit identifies this documentation snapshot; no self-referential commit hash is embedded.",
+  "existing_tag_modified": false,
+  "research_artifacts_changed": false,
+  "release_commit": "11ea6e6472d9b0355935a033221b4c73bc6cc270",
+  "exact_allowlist_additions": [
+    ".devcontainer/devcontainer.json",
+    "output/final/release/v1.1.0_public_demo_deployment_manifest.json"
+  ],
+  "directory_wildcards_added": false,
+  "devcontainer_security": {
+    "cors_disable_option_removed": true,
+    "xsrf_disable_option_removed": true,
+    "automatic_system_upgrade_removed": true,
+    "other_configuration_changes": false,
+    "privileged": false,
+    "docker_socket_mount": false,
+    "additional_host_filesystem_mount": false,
+    "credential_references": false,
+    "lifecycle_commands_executed": false,
+    "community_cloud_app_settings_changed": false
+  }
+}
