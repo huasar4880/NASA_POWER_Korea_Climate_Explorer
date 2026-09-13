@@ -6,6 +6,14 @@
 [증거표](../output/public_demo/final_evidence_matrix.csv), 대표 PNG 5개 및 자체 포함형 HTML 보고서 사본을 제공합니다.
 연구 cache는 공개하지 않습니다. [7-view 공개 데모 설정](PUBLIC_DEMO_DEPLOYMENT.md).
 
+## Project Owner Guides
+
+- [Project Owner Handbook — 구축·해석·운영·활용 통합 설명서](PROJECT_OWNER_HANDBOOK.md)
+- [Quickstart — 한 장 시작 안내](PROJECT_OWNER_QUICKSTART.md)
+- [Glossary — 용어와 프로젝트 사용 맥락](PROJECT_OWNER_GLOSSARY.md)
+- [Troubleshooting — 증상별 문제 해결](PROJECT_OWNER_TROUBLESHOOTING.md)
+- [Cheatsheet — 핵심 수치·명령·면접 메모](PROJECT_OWNER_CHEATSHEET.md)
+
 ## Overview
 
 - [FINAL_RESULTS_SUMMARY](FINAL_RESULTS_SUMMARY.md)

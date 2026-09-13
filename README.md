@@ -107,6 +107,8 @@ streamlit run streamlit_app.py
 
 [문서 색인](docs/INDEX.md) · [원래 CLI/단계 기록](docs/STAGE_HISTORY.md) · [공개 계획](docs/GITHUB_PUBLICATION_PLAN.md) · [데이터 정책](docs/GITHUB_DATA_POLICY.md). raw/processed와 이전 대용량 결과는 기본 공개 대상이 아닙니다. [공개 저장소](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer), [v1.1.0 Release](https://github.com/huasar4880/NASA_POWER_Korea_Climate_Explorer/releases/tag/v1.1.0), [Streamlit 공개 데모](https://korea-climate-explorer.streamlit.app/)가 발행되어 있습니다. 후속 문서 변경은 main에 추가하며 기존 v1.1.0 tag를 이동하지 않습니다. 이번 링크 통합에서는 버전 변경이나 v1.1.1 발행을 하지 않습니다.
 
+[Project Owner Guide — 구축·해석·운영·활용 설명서](docs/PROJECT_OWNER_HANDBOOK.md)
+
 ## 포트폴리오
 
 [전체 설명](docs/FINAL_PORTFOLIO.md) · [기술 요약](docs/TECHNICAL_PORTFOLIO_SUMMARY.md) · [이력서 bullet](docs/RESUME_BULLETS.md) · [면접 질문](docs/INTERVIEW_NOTES.md) · [짧은 pitch](docs/PROJECT_PITCH_60SEC.md).
